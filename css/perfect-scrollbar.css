@@ -1,0 +1,74 @@
+/* perfect-scrollbar v0.7.1 */
+
+.ps {
+    -ms-touch-action: auto;
+    touch-action: auto;
+    overflow: hidden !important;
+    -ms-overflow-style: none;
+    overflow-y:hidden;
+}
+@supports (-ms-overflow-style: none) {
+    .ps {
+        overflow: auto !important;
+    }
+}
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+    .ps {
+        overflow: auto !important;
+    }
+}
+.ps.ps--active-x > .ps__scrollbar-x-rail,
+.ps.ps--active-y > .ps__scrollbar-y-rail {
+    display: block;
+}
+.ps.ps--in-scrolling.ps--x > .ps__scrollbar-x-rail {
+    opacity: 1;
+}
+.ps.ps--in-scrolling.ps--x > .ps__scrollbar-x-rail > .ps__scrollbar-x {
+    /*height: 4vh;*/
+    /*width:4vh!important;*/
+}
+.ps.ps--in-scrolling.ps--y > .ps__scrollbar-y-rail {
+    opacity: 1;
+}
+.ps.ps--in-scrolling.ps--y > .ps__scrollbar-y-rail > .ps__scrollbar-y {
+    width: 4vh;
+}
+.ps > .ps__scrollbar-x-rail {
+    display: none;
+    position: absolute;
+    /* please don't change 'position' */
+    
+    bottom: 0px;
+    /* there must be 'bottom' for ps__scrollbar-x-rail */
+    
+    height: 4vh;
+}
+.ps > .ps__scrollbar-x-rail > .ps__scrollbar-x {
+    position: absolute;
+}
+
+.ps > .ps__scrollbar-y-rail {
+    display: none;
+    position: absolute;
+    /* please don't change 'position' */
+    
+    right: 0;
+    /* there must be 'right' for ps__scrollbar-y-rail */
+    
+    /*width: 4vh;*/
+}
+.ps > .ps__scrollbar-y-rail > .ps__scrollbar-y {
+    position: absolute;
+    /* please don't change 'position' */
+    
+    /*background-color: #aaa;*/
+/*    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;*/
+     /*right: 2px;*/
+    /* there must be 'right' for ps__scrollbar-y */
+    
+    /*width: 6px;*/
+}
